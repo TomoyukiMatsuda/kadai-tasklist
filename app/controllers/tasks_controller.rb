@@ -14,11 +14,11 @@ class TasksController < ApplicationController
   end
   
   def create
-    task = Task.new(task_params)
+    @task = Task.new(task_params)
     
-    if task.save
+    if @task.save
       flash[:success] = 'Taskの登録に成功しました'
-      redirect_to task
+      redirect_to @task
     else
       flash.now[:danger] = 'Taskの登録に失敗しました'
       render :new
@@ -51,7 +51,7 @@ class TasksController < ApplicationController
   private
   
   def task_params
-    params.require(:task).permit(:content)
+    params.require(:task).permit(:content, :status)
   end
   
   def set_task
