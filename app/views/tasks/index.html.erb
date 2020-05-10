@@ -1,4 +1,4 @@
-<h1>Task一覧</h1>
+<h1><%= current_user.name %> Task一覧</h1>
 
 <% @tasks.each do |task| %>
   <ul>
@@ -7,4 +7,4 @@
 <% end %>
 
 <%= link_to '新規Task登録ページ', new_task_path %><br>
-<%= link_to '新規ユーザ登録ページ', signup_path %>
+<%= link_to 'ログアウト', logout_path, method: :delete %>

@@ -3,10 +3,11 @@
 <div>
   <p><%= @task.id %> : <%= @task.content %> / <%= @task.status %></p>
   <p>
-    <%= link_to 'このTaskを編集する', edit_task_path(@task) %>
-    <%= link_to '削除', task_path(@task), method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %>
+    このTaskを 
+    <%= link_to '編集する', edit_task_path(@task) %>
+    <%= link_to '削除する', task_path(@task), method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %>
   </p>
 </div>
 
-<%= link_to 'Task一覧ページ', root_path %>
-
+<%= link_to 'Task一覧ページ', root_path %><br>
+<%= link_to 'ログアウト', logout_path, method: :delete %>
